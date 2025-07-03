@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio JC - Treinamento Funcional</title>
+    <meta
+      name="description"
+      content="Studio JC - Treinamento funcional, saúde, motivação e superação em Itapevi. Venha transformar sua vida!"
+    />
+    <meta
+      name="keywords"
+      content="treinamento funcional, academia, saúde, motivação, Studio JC, Itapevi"
+    />
+    <meta name="author" content="Studio JC" />
+    <meta property="og:title" content="Studio JC - Treinamento Funcional" />
+    <meta
+      property="og:description"
+      content="Mais do que treinos: motivação, saúde, amizade e superação!"
+    />
+    <meta property="og:image" content="assets/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://studiojc.com.br/" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-index.css" />
+  </head>
+  <body>
+    <header role="banner">
+      <div class="header-container">
+        <a
+          href="index.html"
+          class="logo-link"
+          aria-label="Página inicial Studio JC"
+        >
+          <img src="assets/logo.png" alt="Logo Studio JC" class="logo" />
+        </a>
+        <h1>Studio JC</h1>
+        <nav aria-label="Menu principal">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="#" id="btn-area-restrita">Área Restrita</a></li>
+          </ul>
+        </nav>
+        <div id="admin-info" aria-live="polite">
+          <div>
+            <span aria-hidden="true">👤</span>
+            <span>Admin</span>
+            <button id="btn-logout">Sair</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="destaque" aria-labelledby="destaque-titulo">
+        <div class="bem-vindo-flex">
+          <div class="bem-vindo-titulos">
+            <h2 id="destaque-titulo">
+              Bem-vindo ao <span class="studio-destaque">Studio JC</span>!
+            </h2>
+            <p class="bem-vindo-texto">
+              <span class="emoji" aria-hidden="true">💪</span> Mais do que
+              treinos:
+              <strong>motivação, saúde, amizade e superação!</strong>
+              <br />
+              <span class="bem-vindo-frase"
+                >Aqui você é protagonista da sua transformação.</span
+              >
+              <br />
+              <strong>Treinamento funcional de verdade</strong>, ambiente
+              acolhedor e profissionais que se importam com você.
+            </p>
+            <a
+              href="contato.html"
+              class="cta-bem-vindo"
+              role="button"
+              aria-label="Quero fazer uma aula experimental"
+              >Quero fazer uma aula experimental</a
+            >
+          </div>
+        </div>
+        <span class="destaque-chamada"
+          >Venha viver a experiência Studio JC!</span
+        >
+      </section>
+      <section class="info" aria-labelledby="info-titulo">
+        <h3 id="info-titulo">Nossos diferenciais</h3>
+        <ul>
+          <li>Treinos personalizados</li>
+          <li>Profissionais qualificados</li>
+          <li>Ambiente acolhedor</li>
+          <li>Resultados reais</li>
+        </ul>
+      </section>
+      <section class="parcerias" aria-labelledby="parcerias-titulo">
+        <h3 id="parcerias-titulo">Convênios aceitos</h3>
+        <div class="convenios">
+          <img
+            src="assets/hellhub.png"
+            alt="Convênio Hellhub"
+            class="convenio-logo"
+            loading="lazy"
+          />
+          <img
+            src="assets/totalpass.png"
+            alt="Convênio TotalPass"
+            class="convenio-logo"
+            loading="lazy"
+          />
+        </div>
+        <p>O Studio JC aceita Hellhub e TotalPass!</p>
+      </section>
+      <section class="depoimentos" aria-labelledby="depoimentos-titulo">
+        <h3 id="depoimentos-titulo">Depoimentos de Alunos</h3>
+        <div
+          class="carrossel"
+          aria-roledescription="carousel"
+          aria-label="Depoimentos de alunos"
+        >
+          <button class="carrossel-btn prev" aria-label="Depoimento anterior">
+            &#8592;
+          </button>
+          <div class="carrossel-depoimentos">
+            <div
+              class="depoimento"
+              tabindex="0"
+              aria-label="Depoimento de Ana Paula"
+            >
+              <p>
+                "O Studio JC mudou minha vida! Os treinos são incríveis e o
+                ambiente é super motivador."
+              </p>
+              <span>- Ana Paula</span>
+            </div>
+            <div
+              class="depoimento"
+              tabindex="0"
+              aria-label="Depoimento de Carlos Eduardo"
+            >
+              <p>
+                "Profissionais excelentes e resultados reais. Recomendo para
+                todos!"
+              </p>
+              <span>- Carlos Eduardo</span>
+            </div>
+            <div
+              class="depoimento"
+              tabindex="0"
+              aria-label="Depoimento de Juliana Silva"
+            >
+              <p>
+                "Me sinto em casa no Studio JC. Aqui encontrei saúde e amigos!"
+              </p>
+              <span>- Juliana Silva</span>
+            </div>
+          </div>
+          <button class="carrossel-btn next" aria-label="Próximo depoimento">
+            &#8594;
+          </button>
+        </div>
+      </section>
+      <button
+        class="cta-flutuante"
+        id="cta-flutuante"
+        aria-label="Agende sua aula!"
+      >
+        Agende sua aula!
+      </button>
+    </main>
+    <footer role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-logo-quote">
+          <img src="assets/logo.png" alt="Logo Studio JC" class="footer-logo" />
+          <blockquote class="footer-quote">
+            "Movimente-se, cuide do seu corpo e liberte sua mente!"
+          </blockquote>
+        </div>
+        <div class="footer-contato">
+          <h4>CONTATO</h4>
+          <ul class="footer-list">
+            <li>
+              <strong>Telefone:</strong>
+              <a href="tel:+5511999999999" class="footer-telefone"
+                >(11) 99999-9999</a
+              >
+            </li>
+            <li>
+              <strong>E-mail:</strong>
+              <a href="mailto:studiojcfuncional@gmail.com" class="footer-email"
+                >studiojcfuncional@gmail.com</a
+              >
+            </li>
+            <li>
+              <strong>Endereço:</strong>
+              Rua Carmem Silva de Almeida, 349, Itapevi 06693070
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <span class="footer-social-title">Siga-nos</span>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.instagram.com/studiojc_funcional/"
+              target="_blank"
+              aria-label="Instagram Studio JC"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg"
+                alt="Instagram Studio JC"
+                class="footer-instagram"
+            /></a>
+            <a
+              href="https://wa.me/5511999999999"
+              target="_blank"
+              aria-label="WhatsApp Studio JC"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+                alt="WhatsApp Studio JC"
+                class="footer-whatsapp"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">
+        &copy; 2025 Studio JC. Todos os direitos reservados.
+      </p>
+    </footer>
+    <div
+      id="modal-login"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="login-titulo"
+    >
+      <form id="form-login" autocomplete="username" novalidate>
+        <h3 id="login-titulo">Área Restrita</h3>
+        <input
+          id="login-usuario"
+          placeholder="Usuário"
+          required
+          aria-label="Usuário"
+        />
+        <input
+          id="login-senha"
+          type="password"
+          placeholder="Senha"
+          required
+          aria-label="Senha"
+        />
+        <button type="submit">Entrar</button>
+        <span id="login-feedback" aria-live="polite"></span>
+        <button
+          type="button"
+          onclick="document.getElementById('modal-login').style.display='none'"
+        >
+          Cancelar
+        </button>
+      </form>
+    </div>
+    <script src="js/index-enhancements.js"></script>
+  </body>
+</html>

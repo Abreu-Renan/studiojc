@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1751250186573dwijq6lqrab",
+    "texto": "Adoro esse lugar, gosto muito dos treinos",
+    "parentId": null,
+    "data": "2025-06-30T02:23:06.574Z",
+    "likes": 1,
+    "hearts": 2,
+    "respostas": []
+  },
+  {
+    "id": "17512502622189yrb8ohyzt4",
+    "texto": "cade as fotos do campeonato?",
+    "parentId": null,
+    "data": "2025-06-30T02:24:22.218Z",
+    "likes": 1,
+    "hearts": 0,
+    "respostas": []
+  },
+  {
+    "id": "1751416849572qtug6xprxe",
+    "texto": "Que site dahora",
+    "nome": "Renan Abreu",
+    "parentId": null,
+    "data": "2025-07-02T00:40:49.573Z",
+    "likes": 1,
+    "hearts": 1,
+    "respostas": [
+      {
+        "id": "1751416895722vjuogsvdlgd",
+        "texto": "Site dahora",
+        "nome": "Meg",
+        "parentId": "1751416849572qtug6xprxe",
+        "data": "2025-07-02T00:41:35.722Z",
+        "likes": 0,
+        "hearts": 0,
+        "respostas": []
+      }
+    ]
+  }
+]

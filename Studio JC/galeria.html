@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria - Studio JC</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-galeria.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <img src="assets/logo.png" alt="Logo Studio JC" class="logo" />
+        </a>
+        <h1>Studio JC</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="#" id="btn-area-restrita">Área Restrita</a></li>
+          </ul>
+        </nav>
+        <div id="admin-info">
+          <div>
+            <span>👤</span>
+            <span>Admin</span>
+            <button id="btn-logout">Sair</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Galeria de Fotos e Vídeos</h2>
+        <div id="galeria-dinamica"></div>
+        <p
+          style="
+            text-align: center;
+            margin-top: 1em;
+            color: #e10600;
+            font-weight: bold;
+          "
+        >
+          Para adicionar novas fotos ou vídeos, utilize a área restrita (admin).
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div class="ter-container">
+        <div class="footer-logo-quote">
+          <img src="assets/logo.png" alt="Logo Studio JC" class="footer-logo" />
+          <blockquote class="footer-quote">
+            "Movimente-se, cuide do seu corpo e liberte sua mente!"
+          </blockquote>
+        </div>
+        <div class="footer-contato">
+          <h4>CONTATO</h4>
+          <ul class="footer-list">
+            <li>
+              <strong>Telefone:</strong>
+              <a href="tel:+5511999999999" class="footer-telefone"
+                >(11) 99999-9999</a
+              >
+            </li>
+            <li>
+              <strong>E-mail:</strong>
+              <a href="mailto:studiojcfuncional@gmail.com" class="footer-email"
+                >studiojcfuncional@gmail.com</a
+              >
+            </li>
+            <li>
+              <strong>Endereço:</strong> Rua Carmem Silva de Almeida, 349,
+              Itapevi 06693070
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <span class="footer-social-title">Siga-nos</span>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.instagram.com/studiojc_funcional/"
+              target="_blank"
+              aria-label="Instagram Studio JC"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg"
+                alt="Instagram Studio JC"
+                class="footer-instagram"
+            /></a>
+            <a
+              href="https://wa.me/5511999999999"
+              target="_blank"
+              aria-label="WhatsApp Studio JC"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+                alt="WhatsApp Studio JC"
+                class="footer-whatsapp"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">
+        &copy; 2025 Studio JC. Todos os direitos reservados.
+      </p>
+    </footer>
+    <div id="modal-login">
+      <form id="form-login">
+        <h3>Área Restrita</h3>
+        <input id="login-usuario" placeholder="Usuário" required />
+        <input id="login-senha" type="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <span id="login-erro"></span>
+        <button
+          type="button"
+          onclick="document.getElementById('modal-login').style.display='none'"
+        >
+          Cancelar
+        </button>
+      </form>
+    </div>
+    <div id="lightbox" class="lightbox-bg" style="display: none">
+      <span
+        class="lightbox-close"
+        onclick="document.getElementById('lightbox').style.display='none'"
+        >&times;</span
+      >
+      <a id="btn-download" href="#" download class="btn-download"
+        ><span style="font-size: 1.7rem; color: #e10600">&#128229;</span></a
+      >
+      <img
+        id="lightbox-img"
+        class="lightbox-img"
+        src=""
+        alt="Imagem em tamanho real"
+        style="display: none"
+      />
+      <video
+        id="lightbox-video"
+        class="lightbox-img"
+        src=""
+        controls
+        style="display: none"
+      ></video>
+    </div>
+    <script>
+      // Modal login
+      const btnArea = document.getElementById("btn-area-restrita");
+      const modal = document.getElementById("modal-login");
+      const formLogin = document.getElementById("form-login");
+      const erroLogin = document.getElementById("login-erro");
+      const adminInfo = document.getElementById("admin-info");
+      const btnLogout = document.getElementById("btn-logout");
+      // Exibe info admin se logado
+      function checarAdmin() {
+        if (sessionStorage.getItem("areaRestrita") === "1") {
+          adminInfo.style.display = "flex";
+        } else {
+          adminInfo.style.display = "none";
+        }
+      }
+      checarAdmin();
+      btnArea.onclick = function (e) {
+        e.preventDefault();
+        modal.style.display = "flex";
+        erroLogin.style.display = "none";
+      };
+      formLogin.onsubmit = function (e) {
+        e.preventDefault();
+        const usuario = document.getElementById("login-usuario").value.trim();
+        const senha = document.getElementById("login-senha").value.trim();
+        fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `usuario=${encodeURIComponent(
+            usuario
+          )}&senha=${encodeURIComponent(senha)}`,
+        }).then((r) => {
+          if (r.redirected) {
+            sessionStorage.setItem("areaRestrita", "1");
+            window.location.href = r.url;
+          } else {
+            erroLogin.textContent = "Usuário ou senha inválidos!";
+            erroLogin.style.display = "block";
+          }
+        });
+      };
+      // Logoff
+      if (btnLogout) {
+        btnLogout.onclick = function () {
+          fetch("/logout").then(() => {
+            sessionStorage.removeItem("areaRestrita");
+            window.location.href = "/index.html";
+          });
+        };
+      }
+      // Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxVideo = document.getElementById("lightbox-video");
+      const btnDownload = document.getElementById("btn-download");
+      document.querySelectorAll(".galeria img").forEach((img) => {
+        img.onclick = () => {
+          lightbox.style.display = "block";
+          lightboxImg.src = img.src;
+          lightboxImg.style.display = "block";
+          lightboxVideo.style.display = "none";
+          btnDownload.style.display = "block";
+          btnDownload.href = img.src;
+          btnDownload.download = img.src.split("/").pop();
+          btnDownload.setAttribute("aria-label", "Baixar imagem");
+        };
+      });
+      document.querySelectorAll(".galeria video").forEach((vid) => {
+        vid.onclick = () => {
+          lightbox.style.display = "block";
+          lightboxImg.style.display = "none";
+          lightboxVideo.style.display = "block";
+          lightboxVideo.src = vid.querySelector("source").src;
+          btnDownload.style.display = "block";
+          btnDownload.href = vid.querySelector("source").src;
+          btnDownload.download = vid
+            .querySelector("source")
+            .src.split("/")
+            .pop();
+          btnDownload.setAttribute("aria-label", "Baixar vídeo");
+          lightboxVideo.currentTime = 0;
+          lightboxVideo.play();
+        };
+      });
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+          btnDownload.style.display = "none";
+          lightboxImg.src = "";
+          lightboxVideo.src = "";
+        }
+        lightboxVideo.pause();
+      });
+      document
+        .querySelector(".lightbox-close")
+        .addEventListener("click", () => {
+          btnDownload.style.display = "none";
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+          lightboxVideo.src = "";
+          lightboxVideo.pause();
+        });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          lightbox.style.display = "none";
+          btnDownload.style.display = "none";
+          lightboxImg.src = "";
+          lightboxVideo.src = "";
+          lightboxVideo.pause();
+        }
+      });
+      // Carrega galeria dinâmica do backend
+      function renderGaleria(lista, isAdmin) {
+        let html = '<div class="galeria">';
+        lista.forEach((item) => {
+          html += '<div class="galeria-item">';
+          if (item.tipo === "foto") {
+            html += `<img src="${item.url}" alt="${item.nome}" />`;
+            html += `<a href="${item.url}" download class="btn-download-mini" title="Baixar imagem">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e10600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>`;
+            if (isAdmin) {
+              html += `<button class="btn-excluir-mini" onclick="excluirArquivo('${item.nome}','foto')" title="Excluir imagem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> Excluir</button>`;
+            }
+          } else if (item.tipo === "video") {
+            html += `<video controls style="background:#000;"><source src="${item.url}" type="video/mp4" /></video>`;
+            html += `<a href="${item.url}" download class="btn-download-mini" title="Baixar vídeo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e10600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>`;
+            if (isAdmin) {
+              html += `<button class="btn-excluir-mini" onclick="excluirArquivo('${item.nome}','video')" title="Excluir vídeo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> Excluir</button>`;
+            }
+          }
+          html += "</div>";
+        });
+        html += "</div>";
+        document.getElementById("galeria-dinamica").innerHTML = html;
+      }
+      function carregarGaleria() {
+        fetch("/api/galeria")
+          .then((r) => r.json())
+          .then((data) => {
+            const isAdmin = sessionStorage.getItem("areaRestrita") === "1";
+            renderGaleria(data, isAdmin);
+          });
+      }
+      window.addEventListener("DOMContentLoaded", carregarGaleria);
+      // Função para verificar admin e exibir botões de exclusão
+      function mostrarBotoesExcluir() {
+        if (sessionStorage.getItem("areaRestrita") === "1") {
+          document.querySelectorAll(".btn-excluir-mini").forEach((btn) => {
+            btn.style.display = "flex";
+          });
+        } else {
+          document.querySelectorAll(".btn-excluir-mini").forEach((btn) => {
+            btn.style.display = "none";
+          });
+        }
+      }
+      window.addEventListener("DOMContentLoaded", mostrarBotoesExcluir);
+      // Função para excluir arquivo
+      function excluirArquivo(arquivo, tipo) {
+        if (!confirm("Tem certeza que deseja excluir este arquivo?")) return;
+        fetch("/delete", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "file=" + encodeURIComponent(arquivo),
+        }).then((r) => {
+          if (r.redirected) {
+            window.location.href = r.url;
+          } else {
+            window.location.reload();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

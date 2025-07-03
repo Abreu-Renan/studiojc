@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre o Studio JC</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-sobre.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <img src="assets/logo.png" alt="Logo Studio JC" class="logo" />
+        </a>
+        <h1>Studio JC</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="horarios.html">Horários</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="#" id="btn-area-restrita">Área Restrita</a></li>
+          </ul>
+        </nav>
+        <div id="admin-info">
+          <div>
+            <span>👤</span>
+            <span>Admin</span>
+            <button id="btn-logout">Sair</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Sobre o Studio JC</h2>
+        <p>
+          O Studio JC nasceu da paixão pelo movimento e pelo bem-estar. Nossa
+          missão é proporcionar saúde, qualidade de vida e autoestima através do
+          treinamento funcional, com acompanhamento individualizado e ambiente
+          motivador.
+        </p>
+        <p>Venha nos conhecer e faça parte dessa família!</p>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-quote">
+          <img src="assets/logo.png" alt="Logo Studio JC" class="footer-logo" />
+          <blockquote class="footer-quote">
+            "Movimente-se, cuide do seu corpo e liberte sua mente!"
+          </blockquote>
+        </div>
+        <div class="footer-contato">
+          <h4>CONTATO</h4>
+          <ul class="footer-list">
+            <li>
+              <strong>Telefone:</strong>
+              <a href="tel:+5511999999999" class="footer-telefone"
+                >(11) 99999-9999</a
+              >
+            </li>
+            <li>
+              <strong>E-mail:</strong>
+              <a href="mailto:studiojcfuncional@gmail.com" class="footer-email"
+                >studiojcfuncional@gmail.com</a
+              >
+            </li>
+            <li>
+              <strong>Endereço:</strong>
+              Rua Carmem Silva de Almeida, 349, Itapevi 06693070
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <span class="footer-social-title">Siga-nos</span>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.instagram.com/studiojc_funcional/"
+              target="_blank"
+              aria-label="Instagram Studio JC"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg"
+                alt="Instagram Studio JC"
+                class="footer-instagram"
+            /></a>
+            <a
+              href="https://wa.me/5511999999999"
+              target="_blank"
+              aria-label="WhatsApp Studio JC"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+                alt="WhatsApp Studio JC"
+                class="footer-whatsapp"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">
+        &copy; 2025 Studio JC. Todos os direitos reservados.
+      </p>
+    </footer>
+    <div id="modal-login">
+      <form id="form-login">
+        <h3>Área Restrita</h3>
+        <input id="login-usuario" placeholder="Usuário" required />
+        <input id="login-senha" type="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <span id="login-erro"></span>
+        <button
+          type="button"
+          onclick="document.getElementById('modal-login').style.display='none'"
+        >
+          Cancelar
+        </button>
+      </form>
+    </div>
+    <script>
+      // Modal login
+      const btnArea = document.getElementById("btn-area-restrita");
+      const modal = document.getElementById("modal-login");
+      const formLogin = document.getElementById("form-login");
+      const erroLogin = document.getElementById("login-erro");
+      const adminInfo = document.getElementById("admin-info");
+      const btnLogout = document.getElementById("btn-logout");
+      // Exibe info admin se logado
+      function checarAdmin() {
+        if (sessionStorage.getItem("areaRestrita") === "1") {
+          adminInfo.style.display = "flex";
+        } else {
+          adminInfo.style.display = "none";
+        }
+      }
+      checarAdmin();
+      btnArea.onclick = function (e) {
+        e.preventDefault();
+        modal.style.display = "flex";
+        erroLogin.style.display = "none";
+      };
+      formLogin.onsubmit = function (e) {
+        e.preventDefault();
+        const usuario = document.getElementById("login-usuario").value.trim();
+        const senha = document.getElementById("login-senha").value.trim();
+        fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `usuario=${encodeURIComponent(
+            usuario
+          )}&senha=${encodeURIComponent(senha)}`,
+        }).then((r) => {
+          if (r.redirected) {
+            sessionStorage.setItem("areaRestrita", "1");
+            window.location.href = r.url;
+          } else {
+            erroLogin.textContent = "Usuário ou senha inválidos!";
+            erroLogin.style.display = "block";
+          }
+        });
+      };
+      // Logoff
+      if (btnLogout) {
+        btnLogout.onclick = function () {
+          fetch("/logout").then(() => {
+            sessionStorage.removeItem("areaRestrita");
+            window.location.href = "/index.html";
+          });
+        };
+      }
+    </script>
+  </body>
+</html>

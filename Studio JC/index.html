@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/style-index.css" />
   </head>
   <body>
+    <div class="main-bg-foto"></div>
     <header role="banner">
       <div class="header-container">
         <a
@@ -35,7 +36,10 @@
         >
           <img src="assets/logo.png" alt="Logo Studio JC" class="logo" />
         </a>
-        <h1>Studio JC</h1>
+        <h1>
+          Studio <span class="j-vermelho">J</span
+          ><span class="c-branco">C</span>
+        </h1>
         <nav aria-label="Menu principal">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -56,24 +60,32 @@
       </div>
     </header>
     <main id="main-content" tabindex="-1">
-      <section class="destaque" aria-labelledby="destaque-titulo">
+      <section class="destaque bem-vindo" aria-labelledby="destaque-titulo">
         <div class="bem-vindo-flex">
           <div class="bem-vindo-titulos">
             <h2 id="destaque-titulo">
-              Bem-vindo ao <span class="studio-destaque">Studio JC</span>!
+              Bem-vindo ao
+              <span class="studio-destaque">
+                Studio <span class="j-vermelho">J</span
+          ><span class="c-branco">C</span>
             </h2>
             <p class="bem-vindo-texto">
-              <span class="emoji" aria-hidden="true">💪</span> Mais do que
-              treinos:
-              <strong>motivação, saúde, amizade e superação!</strong>
-              <br />
+              <!-- <span class="emoji" aria-hidden="true">💪</span> -->
+              <strong>Transforme seu corpo e sua mente!</strong><br />
+              No Studio JC, você encontra
+              <span style="color: #e10600; font-weight: bold"
+                >treinamento funcional de verdade</span
+              >, ambiente acolhedor e profissionais que se importam com você.<br />
               <span class="bem-vindo-frase"
                 >Aqui você é protagonista da sua transformação.</span
               >
-              <br />
-              <strong>Treinamento funcional de verdade</strong>, ambiente
-              acolhedor e profissionais que se importam com você.
             </p>
+            <ul class="bem-vindo-lista">
+              <li>✔️ Treinos personalizados para todos os níveis</li>
+              <li>✔️ Resultados reais e acompanhamento próximo</li>
+              <li>✔️ Comunidade motivadora e ambiente familiar</li>
+              <li>✔️ Aulas dinâmicas, seguras e divertidas</li>
+            </ul>
             <a
               href="contato.html"
               class="cta-bem-vindo"
@@ -86,6 +98,171 @@
         <span class="destaque-chamada"
           >Venha viver a experiência Studio JC!</span
         >
+      </section>
+      <!-- Carrossel de Galeria -->
+      <section class="galeria-home" aria-labelledby="galeria-home-titulo">
+        <h3 id="galeria-home-titulo">Veja nossa galeria</h3>
+        <div class="galeria-carrossel">
+          <button class="galeria-btn prev" aria-label="Foto anterior">
+            &#8592;
+          </button>
+          <div class="galeria-imagens">
+            <img
+              src="fotos/1751122007602-IMG_2113.jpg"
+              alt="Treino funcional 1"
+              loading="lazy"
+            />
+            <img
+              src="fotos/1751248352210-IMG_5011.jpg"
+              alt="Treino funcional 2"
+              loading="lazy"
+            />
+            <img
+              src="fotos/1751122300141-campeonato_2025_(209).jpg"
+              alt="Evento especial"
+              loading="lazy"
+            />
+          </div>
+          <button class="galeria-btn next" aria-label="Próxima foto">
+            &#8594;
+          </button>
+        </div>
+        <a href="galeria.html" class="cta-galeria">Ver galeria completa</a>
+      </section>
+      <!-- Indicadores de Resultados -->
+      <section class="indicadores" aria-label="Resultados do Studio JC">
+        <div class="indicador">
+          <span class="indicador-num">+500</span><span>Alunos atendidos</span>
+        </div>
+        <div class="indicador">
+          <span class="indicador-num">10</span><span>Anos de experiência</span>
+        </div>
+        <div class="indicador">
+          <span class="indicador-num">4.9★</span><span>Avaliação média</span>
+        </div>
+        <div class="indicador">
+          <span class="indicador-num">100%</span><span>Ambiente acolhedor</span>
+        </div>
+      </section>
+      <!-- Agenda Resumida -->
+      <section class="agenda-home" aria-labelledby="agenda-titulo">
+        <h3 id="agenda-titulo">Horários de Aulas</h3>
+        <table class="agenda-tabela">
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Manhã</th>
+              <th>Noite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Seg a Sex</td>
+              <td>6h - 10h</td>
+              <td>18h - 22h</td>
+            </tr>
+            <tr>
+              <td>Sábado</td>
+              <td>8h - 12h</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="horarios.html" class="cta-agenda">Ver horários completos</a>
+      </section>
+      <!-- Equipe de Profissionais -->
+      <section class="equipe-home" aria-labelledby="equipe-titulo">
+        <h3 id="equipe-titulo">Nossa Equipe</h3>
+        <div class="equipe-lista">
+          <div class="equipe-membro">
+            <img
+              src="assets/professor1.jpg"
+              alt="Professor João - Treinador"
+              loading="lazy"
+            />
+            <span class="equipe-nome">João Silva</span>
+            <span class="equipe-bio"
+              >CREF 12345-G/SP<br />Especialista em funcional</span
+            >
+          </div>
+          <div class="equipe-membro">
+            <img
+              src="assets/professora2.jpg"
+              alt="Professora Maria - Nutricionista"
+              loading="lazy"
+            />
+            <span class="equipe-nome">Maria Souza</span>
+            <span class="equipe-bio"
+              >Nutricionista Esportiva<br />CRN 67890</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Blog/Dicas Rápidas -->
+      <section class="blog-home" aria-labelledby="blog-titulo">
+        <h3 id="blog-titulo">Dicas Rápidas</h3>
+        <ul class="blog-lista">
+          <li>
+            <strong>Hidratação:</strong> Beba água antes, durante e após o
+            treino.
+          </li>
+          <li>
+            <strong>Alongamento:</strong> Não esqueça de alongar antes e depois
+            das aulas.
+          </li>
+          <li>
+            <strong>Alimentação:</strong> Prefira alimentos leves antes do
+            treino.
+          </li>
+        </ul>
+        <a href="#" class="cta-blog">Ver mais dicas</a>
+      </section>
+      <!-- Feed do Instagram -->
+      <section class="instagram-home" aria-labelledby="instagram-titulo">
+        <h3 id="instagram-titulo">Nosso Instagram</h3>
+        <div class="instagram-feed">
+          <iframe
+            src="https://www.instagram.com/studiojc_funcional/embed"
+            title="Feed Instagram Studio JC"
+            loading="lazy"
+            style="border: none; width: 100%; height: 400px"
+          ></iframe>
+        </div>
+      </section>
+      <!-- FAQ -->
+      <section class="faq-home" aria-labelledby="faq-titulo">
+        <h3 id="faq-titulo">Perguntas Frequentes</h3>
+        <details>
+          <summary>Preciso ter experiência para treinar?</summary>
+          <p>Não! Nossos treinos são adaptados para todos os níveis.</p>
+        </details>
+        <details>
+          <summary>Como faço para agendar uma aula experimental?</summary>
+          <p>
+            Basta clicar no botão de agendamento ou falar conosco pelo WhatsApp.
+          </p>
+        </details>
+        <details>
+          <summary>Quais convênios são aceitos?</summary>
+          <p>Atualmente aceitamos Wellhub e TotalPass.</p>
+        </details>
+      </section>
+      <!-- Depoimentos em Vídeo -->
+      <section
+        class="depoimentos-video"
+        aria-labelledby="depoimentos-video-titulo"
+      >
+        <h3 id="depoimentos-video-titulo">Depoimentos em Vídeo</h3>
+        <div class="depoimentos-videos-lista">
+          <video controls width="250" poster="assets/depoimento1.jpg">
+            <source
+              src="videos/1751248352164-VÃ­deo_do_WhatsApp_de_2025-06-29_Ã_(s)_22.24.27_770e10c0.mp4"
+              type="video/mp4"
+            />
+            Seu navegador não suporta vídeo.
+          </video>
+          <!-- Adicione mais vídeos conforme desejar -->
+        </div>
       </section>
       <section class="info" aria-labelledby="info-titulo">
         <h3 id="info-titulo">Nossos diferenciais</h3>
@@ -100,19 +277,19 @@
         <h3 id="parcerias-titulo">Convênios aceitos</h3>
         <div class="convenios">
           <img
-            src="assets/hellhub.png"
-            alt="Convênio Hellhub"
+            src="assets/transferir.jpeg"
+            alt="Convênio Wellhub"
             class="convenio-logo"
             loading="lazy"
           />
           <img
-            src="assets/totalpass.png"
+            src="assets/Logo_Branco_verde.png"
             alt="Convênio TotalPass"
             class="convenio-logo"
             loading="lazy"
           />
         </div>
-        <p>O Studio JC aceita Hellhub e TotalPass!</p>
+        <p>O Studio JC aceita Wellhub e TotalPass!</p>
       </section>
       <section class="depoimentos" aria-labelledby="depoimentos-titulo">
         <h3 id="depoimentos-titulo">Depoimentos de Alunos</h3>

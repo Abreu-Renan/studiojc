@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre o Studio JC</title>
+    <title>Blog Fitness - Studio JC</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style-sobre.css" />
     <link rel="stylesheet" href="css/style-index.css" />
   </head>
   <body>
@@ -26,38 +25,44 @@
             <li><a href="#" id="btn-area-restrita">Área Restrita</a></li>
           </ul>
         </nav>
-        <div id="admin-info">
-          <div>
-            <span>👤</span>
-            <span>Admin</span>
-            <button id="btn-logout">Sair</button>
-          </div>
-        </div>
       </div>
     </header>
-    <main>
-      <section>
-        <h2>Sobre o Studio JC</h2>
-        <p>
-          O Studio JC nasceu da paixão pelo movimento e pelo bem-estar. Nossa
-          missão é proporcionar saúde, qualidade de vida e autoestima através do
-          treinamento funcional, com acompanhamento individualizado e ambiente
-          motivador.
-        </p>
-        <p>Venha nos conhecer e faça parte dessa família!</p>
+    <main id="main-content" tabindex="-1">
+      <section class="blog-fitness" aria-labelledby="blog-fitness-titulo">
+        <h2 id="blog-fitness-titulo">Blog Fitness - Dicas do Studio JC</h2>
+        <article class="blog-post">
+          <h3>Como manter a motivação nos treinos?</h3>
+          <p>
+            Defina metas realistas, treine com amigos e celebre cada conquista.
+            A motivação é construída no dia a dia!
+          </p>
+        </article>
+        <article class="blog-post">
+          <h3>Importância do descanso</h3>
+          <p>
+            O descanso é fundamental para a recuperação muscular e prevenção de
+            lesões. Respeite seu corpo!
+          </p>
+        </article>
+        <article class="blog-post">
+          <h3>Alimentação pré e pós-treino</h3>
+          <p>
+            Antes do treino, prefira alimentos leves e ricos em energia. Após,
+            invista em proteínas e hidratação.
+          </p>
+        </article>
+        <article class="blog-post">
+          <h3>Dica extra: Alongue-se sempre!</h3>
+          <p>
+            O alongamento melhora a flexibilidade, previne lesões e contribui
+            para o bem-estar geral.
+          </p>
+        </article>
+        <div class="blog-voltar">
+          <a href="index.html" class="cta-blog">Voltar para Home</a>
+        </div>
       </section>
     </main>
-    <section class="instagram-home" aria-labelledby="instagram-titulo">
-      <h3 id="instagram-titulo">Nosso Instagram</h3>
-      <div class="instagram-feed">
-        <iframe
-          src="https://www.instagram.com/studiojc_funcional/embed"
-          title="Feed Instagram Studio JC"
-          loading="lazy"
-          style="border: none; width: 100%; height: 400px"
-        ></iframe>
-      </div>
-    </section>
     <footer role="contentinfo">
       <div class="footer-container">
         <div class="footer-logo-quote">
@@ -94,20 +99,24 @@
               href="https://www.instagram.com/studiojc_funcional/"
               target="_blank"
               aria-label="Instagram Studio JC"
-              ><img
+            >
+              <img
                 src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg"
                 alt="Instagram Studio JC"
                 class="footer-instagram"
-            /></a>
+              />
+            </a>
             <a
               href="https://wa.me/5511999999999"
               target="_blank"
               aria-label="WhatsApp Studio JC"
-              ><img
+            >
+              <img
                 src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
                 alt="WhatsApp Studio JC"
                 class="footer-whatsapp"
-            /></a>
+              />
+            </a>
           </div>
         </div>
         <div class="footer-convenios">
@@ -135,72 +144,5 @@
         &copy; 2025 Studio JC. Todos os direitos reservados.
       </p>
     </footer>
-    <div id="modal-login">
-      <form id="form-login">
-        <h3>Área Restrita</h3>
-        <input id="login-usuario" placeholder="Usuário" required />
-        <input id="login-senha" type="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-        <span id="login-erro"></span>
-        <button
-          type="button"
-          onclick="document.getElementById('modal-login').style.display='none'"
-        >
-          Cancelar
-        </button>
-      </form>
-    </div>
-    <script>
-      // Modal login
-      const btnArea = document.getElementById("btn-area-restrita");
-      const modal = document.getElementById("modal-login");
-      const formLogin = document.getElementById("form-login");
-      const erroLogin = document.getElementById("login-erro");
-      const adminInfo = document.getElementById("admin-info");
-      const btnLogout = document.getElementById("btn-logout");
-      // Exibe info admin se logado
-      function checarAdmin() {
-        if (sessionStorage.getItem("areaRestrita") === "1") {
-          adminInfo.style.display = "flex";
-        } else {
-          adminInfo.style.display = "none";
-        }
-      }
-      checarAdmin();
-      btnArea.onclick = function (e) {
-        e.preventDefault();
-        modal.style.display = "flex";
-        erroLogin.style.display = "none";
-      };
-      formLogin.onsubmit = function (e) {
-        e.preventDefault();
-        const usuario = document.getElementById("login-usuario").value.trim();
-        const senha = document.getElementById("login-senha").value.trim();
-        fetch("/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: `usuario=${encodeURIComponent(
-            usuario
-          )}&senha=${encodeURIComponent(senha)}`,
-        }).then((r) => {
-          if (r.redirected) {
-            sessionStorage.setItem("areaRestrita", "1");
-            window.location.href = r.url;
-          } else {
-            erroLogin.textContent = "Usuário ou senha inválidos!";
-            erroLogin.style.display = "block";
-          }
-        });
-      };
-      // Logoff
-      if (btnLogout) {
-        btnLogout.onclick = function () {
-          fetch("/logout").then(() => {
-            sessionStorage.removeItem("areaRestrita");
-            window.location.href = "/index.html";
-          });
-        };
-      }
-    </script>
   </body>
 </html>

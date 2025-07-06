@@ -65,16 +65,43 @@ document.addEventListener("DOMContentLoaded", function () {
         feedback.className = "feedback-erro";
         return;
       }
-      // Simulação de login (substitua por lógica real)
-      if (usuario === "admin" && senha === "1234") {
-        feedback.textContent = "Login realizado com sucesso!";
-        feedback.className = "feedback-sucesso";
-        setTimeout(() => {
-          document.getElementById("modal-login").style.display = "none";
-        }, 1000);
-      } else {
-        feedback.textContent = "Usuário ou senha inválidos.";
-        feedback.className = "feedback-erro";
+      // Envia para o backend real
+      fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body:
+          "usuario=" +
+          encodeURIComponent(usuario) +
+          "&senha=" +
+          encodeURIComponent(senha),
+      })
+        .then((r) => {
+          if (r.redirected) {
+            sessionStorage.setItem("areaRestrita", "1");
+            window.location.href = r.url;
+          } else {
+            feedback.textContent = "Usuário ou senha inválidos!";
+            feedback.className = "feedback-erro";
+          }
+        })
+        .catch(() => {
+          feedback.textContent = "Erro ao conectar ao servidor.";
+          feedback.className = "feedback-erro";
+        });
+    });
+  }
+
+  // Exibe modal de login ao clicar em Área Restrita
+  const btnAreaRestrita = document.getElementById("btn-area-restrita");
+  const modalLogin = document.getElementById("modal-login");
+  if (btnAreaRestrita && modalLogin) {
+    btnAreaRestrita.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalLogin.style.display = "flex";
+      const feedback = document.getElementById("login-feedback");
+      if (feedback) {
+        feedback.textContent = "";
+        feedback.className = "";
       }
     });
   }

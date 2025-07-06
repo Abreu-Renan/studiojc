@@ -85,7 +85,14 @@ function requireAdmin(req, res, next) {
   if (req.session && req.session.loggedIn && req.session.usuario === "admin") {
     next();
   } else {
-    res.status(403).send("Acesso restrito. Faça login como admin.");
+    // Se for requisição AJAX, retorna 403 em JSON
+    if (req.xhr || req.headers.accept.indexOf("json") > -1) {
+      return res
+        .status(403)
+        .json({ erro: "Acesso restrito. Faça login como admin." });
+    }
+    // Para requisições normais, redireciona para login
+    res.redirect("/login?redirect=" + encodeURIComponent(req.originalUrl));
   }
 }
 

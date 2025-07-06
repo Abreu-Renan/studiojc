@@ -23,16 +23,9 @@
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="contato.html">Contato</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="#" id="btn-area-restrita">Área Restrita</a></li>
           </ul>
         </nav>
-        <div id="admin-info">
-          <div>
-            <span>👤</span>
-            <span>Admin</span>
-            <button id="btn-logout">Sair</button>
-          </div>
-        </div>
+        <div id="admin-info" style="display: none"></div>
       </div>
     </header>
     <main>
@@ -226,21 +219,7 @@
         &copy; 2025 Studio JC. Todos os direitos reservados.
       </p>
     </footer>
-    <div id="modal-login">
-      <form id="form-login">
-        <h3>Área Restrita</h3>
-        <input id="login-usuario" placeholder="Usuário" required />
-        <input id="login-senha" type="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-        <span id="login-erro"></span>
-        <button
-          type="button"
-          onclick="document.getElementById('modal-login').style.display='none'"
-        >
-          Cancelar
-        </button>
-      </form>
-    </div>
+    <div id="modal-login" style="display: none"></div>
     <script>
       // Modal login
       const btnArea = document.getElementById("btn-area-restrita");

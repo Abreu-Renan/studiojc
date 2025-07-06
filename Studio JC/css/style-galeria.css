@@ -1,113 +1,109 @@
 /* Estilos específicos da galeria (galeria.html) do Studio JC */
 
-/* Header Admin */
-#admin-info {
-  display: none;
-  position: absolute;
-  top: 18px;
-  right: 32px;
-  z-index: 200;
-  align-items: center;
-  gap: 8px;
+/* MANTENHA APENAS O QUE FOR EXCLUSIVO DA GALERIA ABAIXO */
+
+/* Exemplo: grid da galeria, lightbox, botões de download/excluir */
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 24px;
 }
-#admin-info > div {
+.galeria-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 260px;
 }
-#admin-info span:first-child {
-  font-size: 2.1rem;
-  color: #fff;
-  background: #e10600;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
+.galeria-item img,
+.galeria-item video {
+  max-width: 220px;
+  max-height: 180px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.btn-download-mini {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px #e1060033;
-}
-#admin-info span:last-child {
-  font-size: 13px;
-  color: #fff;
+  gap: 4px;
+  color: #e10600;
   font-weight: bold;
-  margin-top: 2px;
-}
-#btn-logout {
-  margin-top: 4px;
+  text-decoration: none;
+  font-size: 15px;
+  margin-bottom: 4px;
   background: none;
   border: none;
-  color: #e10600;
-  font-size: 13px;
   cursor: pointer;
-  text-decoration: underline;
 }
-
-/* Conteúdo principal */
-main section {
-  max-width: 700px;
-  margin: 0 auto 32px auto;
-  padding: 24px 0 0 0;
+.btn-download-mini svg {
+  vertical-align: middle;
 }
-main h2 {
-  font-size: 2.1rem;
-  margin-bottom: 18px;
+.btn-excluir-mini {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  background: #e10600;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 2px;
+  transition: background 0.2s;
 }
-main p {
-  font-size: 1.1rem;
-  margin-bottom: 18px;
+.btn-excluir-mini:hover {
+  background: #b00400;
 }
-
-/* Modal Login */
-#modal-login {
-  display: none;
+.lightbox-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #0008;
+  background: #000b;
   z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-#modal-login form {
-  background: #fff;
-  padding: 32px 28px;
-  border-radius: 12px;
-  box-shadow: 0 4px 32px #0005;
-  min-width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 2px 24px #0008;
 }
-#modal-login input {
-  padding: 7px 12px;
-  border-radius: 7px;
-  border: 1.2px solid #e1060033;
-  font-size: 15px;
-  width: 180px;
-}
-#modal-login button[type="submit"] {
-  padding: 8px 24px;
-  border-radius: 8px;
-  background: #e10600;
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 44px;
+  font-size: 3rem;
   color: #fff;
-  border: none;
-  font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
+  z-index: 10001;
+  text-shadow: 0 2px 8px #000a;
 }
-#login-erro {
-  color: red;
-  font-size: 14px;
-  display: none;
-}
-#modal-login button[type="button"] {
+.btn-download {
+  position: absolute;
+  top: 24px;
+  left: 44px;
   background: none;
   border: none;
   color: #e10600;
-  font-size: 15px;
+  font-size: 2rem;
   cursor: pointer;
+  z-index: 10001;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
+
+/* FIM: mantenha o restante dos estilos globais no style-index.css */

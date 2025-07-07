@@ -248,138 +248,23 @@ main p {
     align-items: flex-start;
     text-align: left;
   }
-  header .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 0 10px;
-    height: auto;
-  }
-  header h1 {
-    font-size: 1.5rem;
-    margin: 0 0 8px 0;
-  }
-  nav ul {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .main-bg-foto {
-    min-height: 120px;
-    height: 24vh;
-  }
 }
 
 @media (max-width: 700px) {
-  main,
-  .main-bg-foto {
-    border-radius: 0;
-    padding: 0 2px;
-  }
-  .diferenciais-lista {
-    gap: 18px;
-  }
-  .diferencial-item {
-    flex-direction: column !important;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 14px 6px;
-    min-width: 0;
-    width: 100%;
-  }
-  .diferencial-foto {
-    width: 100%;
-    max-width: 100%;
-    height: 120px;
-  }
-  .diferencial-texto {
-    min-width: 0;
-    width: 100%;
-    font-size: 1em;
-  }
-  .equipe-lista {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .equipe-membro {
-    width: 100%;
-    min-width: 0;
-    padding: 10px 4px;
-  }
-  .agenda-tabela th,
-  .agenda-tabela td {
-    padding: 4px 2px;
-    font-size: 0.95em;
-  }
-  .indicadores {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-  }
-  .galeria-imagens img {
-    width: 70px;
-    height: 44px;
-  }
-  .carrossel-depoimentos {
-    max-width: 100vw;
-    min-width: 0;
-  }
   .footer-container {
     flex-direction: column;
-    gap: 8px;
-    padding: 8px 2px;
+    gap: 16px;
+    align-items: stretch;
+    text-align: left;
+    padding: 18px 6px 6px 6px;
   }
-  .footer-logo {
-    width: 70px;
-  }
-  .footer-social-icons img {
-    width: 28px;
-    height: 28px;
-  }
-  .cta-flutuante {
-    right: 6px;
-    bottom: 6px;
-    padding: 8px 12px;
-    font-size: 0.95em;
-  }
-  .main-bg-foto {
-    height: 22vh;
-    min-height: 90px;
-    border-radius: 0;
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  header .header-container {
-    flex-direction: column;
-    gap: 4px;
-    padding: 0 2px;
-    height: auto;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 4px;
-    width: 100%;
+  .footer-social {
     align-items: flex-start;
+    text-align: left;
   }
-  nav ul li {
-    width: 100%;
-  }
-  main {
-    padding: 2px 0;
-    font-size: 0.98em;
-  }
-  .destaque.bem-vindo {
-    padding: 0 4px 8px 4px;
-    font-size: 1em;
-    top: -18px;
-  }
-  .equipe-membro img {
-    width: 60px;
-    height: 60px;
-  }
-  .footer-logo {
-    width: 48px;
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
@@ -950,19 +835,32 @@ button.ativo,
 
 /* Bem-vindo aprimorado */
 .destaque.bem-vindo {
-  position: relative;
+  /* Removido background e box-shadow para ficar sem fundo */
   background: none;
   color: #fff;
-  padding: 48vh 24px 12px 24px; /* padding-top igual à altura da imagem */
+  padding: 120px 24px 32px 24px; /* padding-top ainda maior para descer mais o texto */
   border-radius: 18px;
   text-align: center;
   margin-bottom: 36px;
   box-shadow: none;
   font-size: 1.25rem;
   font-weight: 500;
+  position: relative;
   overflow: hidden;
   animation: fadeInDown 1s;
-  top: 0;
+}
+.destaque.bem-vindo .bem-vindo-titulos h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  font-family: "Oswald", "Montserrat", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #e1060033, 0 1px 0 #000, 0 0 8px #e10600;
+}
+.destaque.bem-vindo .bem-vindo-texto {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  color: #fff;
+  text-shadow: 0 2px 8px #3a7bbf33;
 }
 .bem-vindo-lista {
   list-style: none;
@@ -1007,8 +905,99 @@ button.ativo,
   color: #fff;
   transform: scale(1.05);
 }
+@media (max-width: 700px) {
+  .destaque.bem-vindo {
+    padding: 58px 4px 16px 4px; /* aumenta o padding-top no mobile também */
+    font-size: 1em;
+  }
+  .bem-vindo-lista {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
 
-/* --- Sobreposição do Bem-vindo sobre a imagem de fundo --- */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    text-align: left;
+    padding: 24px 12px 8px 12px;
+  }
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .indicadores {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .equipe-lista {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    text-align: left;
+    padding: 18px 6px 6px 6px;
+  }
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Responsividade geral para telas menores */
+@media (max-width: 600px) {
+  .carrossel-depoimentos {
+    max-width: 95vw;
+  }
+  .cta-flutuante {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 18px;
+    font-size: 1em;
+  }
+  .banner-promocao,
+  .galeria-home,
+  .indicadores,
+  .agenda-home,
+  .equipe-home,
+  .blog-home,
+  .instagram-home,
+  .faq-home,
+  .depoimentos-video {
+    padding: 14px 4px;
+    font-size: 0.98em;
+  }
+  .galeria-imagens img {
+    width: 80px;
+    height: 54px;
+  }
+  .equipe-membro {
+    width: 100%;
+  }
+  .depoimentos-videos-lista video {
+    width: 98vw;
+    max-width: 250px;
+    height: 120px;
+  }
+}
+
+/* Background de foto estilo referência: ocupa topo, escurecido, texto por cima centralizado */
 .main-bg-foto {
   position: absolute;
   top: 0;
@@ -1016,47 +1005,189 @@ button.ativo,
   width: 100vw;
   height: 48vh;
   min-height: 320px;
-  background-image: url("../fotos/campeonato-2025-769.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 4px 24px #0005;
-  margin-bottom: 0;
+  background: url("../assets/campeonato 2025 (769).jpg") center center/cover
+    no-repeat;
   z-index: 1;
+  opacity: 1;
   filter: brightness(0.45);
+  pointer-events: none;
+  transition: opacity 0.5s, filter 0.5s;
+}
+@media (max-width: 900px) {
+  .main-bg-foto {
+    height: 32vh;
+    min-height: 180px;
+  }
 }
 
-.bem-vindo-flex {
+.bem-vindo-flex,
+.destaque.bem-vindo {
   position: relative;
   z-index: 2;
 }
 
+.destaque.bem-vindo {
+  /* Removido background e box-shadow para ficar sem fundo */
+  background: none;
+  color: #fff;
+  padding: 120px 24px 32px 24px; /* padding-top ainda maior para descer mais o texto */
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 36px;
+  box-shadow: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInDown 1s;
+}
+.destaque.bem-vindo .bem-vindo-titulos h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  font-family: "Oswald", "Montserrat", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #e1060033, 0 5px 0 #000, 0 0 8px #e10600;
+}
+.destaque.bem-vindo .bem-vindo-texto {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  color: #fff;
+  text-shadow: 0 2px 8px #3a7bbf33;
+}
+.bem-vindo-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.bem-vindo-lista li {
+  background: #fff1;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1.08em;
+  box-shadow: 0 2px 8px #3a7bbf22;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.bem-vindo-lista li:hover {
+  background: #3a7bbf;
+  transform: scale(1.05);
+}
+.cta-bem-vindo {
+  background: #fff;
+  color: #e10600;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.15em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #e1060033;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  margin-top: 10px;
+  display: inline-block;
+}
+.cta-bem-vindo:hover {
+  background: #3a7bbf;
+  color: #fff;
+  transform: scale(1.05);
+}
 @media (max-width: 700px) {
-  .main-bg-foto {
-    height: 22vh;
-    min-height: 90px;
-    border-radius: 0;
-    width: 100vw;
-  }
   .destaque.bem-vindo {
-    padding: 22vh 4px 8px 4px;
+    padding: 58px 4px 16px 4px; /* aumenta o padding-top no mobile também */
     font-size: 1em;
+  }
+  .bem-vindo-lista {
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
-/* Destaque Studio */
-.destaque.bem-vindo .studio-destaque {
-  display: inline-block;
-  color: #fff;
-  font-size: 2.2em;
-  font-weight: bold;
-  text-shadow: 0 2px 12px #000a, 0 1px 0 #e10600;
+/*main#main-content {
   position: relative;
   z-index: 3;
-  padding: 0.1em 0.4em;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.18);
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+  background: #181818ee;
+  border-radius: 0 0 18px 18px;
+  margin-top: -60px;
+  box-shadow: 0 4px 32px #0005;
+}*/
+
+.studio-destaque {
+  color: #fff;
+}
+.j-vermelho {
+  color: #e10600;
+}
+.c-branco {
+  color: #fff;
+}
+
+/* Diferenciais */
+.diferenciais-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto 36px auto;
+  padding: 0;
+}
+.diferencial-item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: #232323;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  animation: fadeInUp 1.2s;
+  flex-wrap: wrap;
+}
+.diferencial-item .diferencial-texto {
+  flex: 1.2;
+  min-width: 180px;
+  color: #fff;
+  font-size: 1.18em;
+  font-weight: 500;
+  text-align: left;
+}
+.diferencial-item .diferencial-foto {
+  flex: 1;
+  min-width: 120px;
+  max-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.diferencial-item .diferencial-foto img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #e1060033;
+  object-fit: cover;
+}
+.diferenciais-lista .diferencial-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+@media (max-width: 800px) {
+  .diferencial-item {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    align-items: stretch;
+    padding: 14px 6px;
+  }
+  .diferencial-item .diferencial-texto {
+    text-align: center;
+    font-size: 1em;
+  }
+  .diferencial-item .diferencial-foto {
+    max-width: 100%;
+    justify-content: center;
+  }
 }

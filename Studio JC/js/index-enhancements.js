@@ -124,4 +124,29 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener("mouseup", () => btn.classList.remove("ativo"));
       btn.addEventListener("mouseleave", () => btn.classList.remove("ativo"));
     });
+
+  // MENU HAMBURGUER RESPONSIVO
+  const btnMenu = document.querySelector(".menu-hamburguer");
+  const ulMenu = document.getElementById("menu-principal");
+  if (btnMenu && ulMenu) {
+    btnMenu.addEventListener("click", function () {
+      ulMenu.classList.toggle("menu-aberto");
+      const aberto = ulMenu.classList.contains("menu-aberto");
+      btnMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
+    });
+    // Fecha menu ao clicar fora
+    document.addEventListener("click", function (e) {
+      if (!btnMenu.contains(e.target) && !ulMenu.contains(e.target)) {
+        ulMenu.classList.remove("menu-aberto");
+        btnMenu.setAttribute("aria-expanded", "false");
+      }
+    });
+    // Fecha menu ao navegar
+    ulMenu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        ulMenu.classList.remove("menu-aberto");
+        btnMenu.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 });

@@ -16,7 +16,7 @@
         </a>
         <h1>Studio JC</h1>
         <nav>
-          <ul>
+          <ul id="menu-principal">
             <li><a href="index.html">Home</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="horarios.html">Horários</a></li>
@@ -26,6 +26,16 @@
             <!-- <li><a href="#" id="btn-area-restrita">Área Restrita</a></li> -->
           </ul>
         </nav>
+        <button
+          class="menu-hamburguer"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div id="admin-info" style="display: none"></div>
       </div>
     </header>
@@ -281,64 +291,5 @@
       ></video>
     </div>
     <script src="js/index-enhancements.js"></script>
-    <script>
-      // Lightbox para galeria estática
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const lightboxVideo = document.getElementById("lightbox-video");
-      const btnDownload = document.getElementById("btn-download");
-      document.addEventListener("click", function (e) {
-        if (e.target.matches(".galeria img")) {
-          lightbox.style.display = "block";
-          lightboxImg.src = e.target.src;
-          lightboxImg.style.display = "block";
-          lightboxVideo.style.display = "none";
-          btnDownload.style.display = "block";
-          btnDownload.href = e.target.src;
-          btnDownload.download = e.target.src.split("/").pop();
-          btnDownload.setAttribute("aria-label", "Baixar imagem");
-        }
-        if (e.target.matches(".galeria video")) {
-          const source = e.target.querySelector("source") || e.target;
-          lightbox.style.display = "block";
-          lightboxImg.style.display = "none";
-          lightboxVideo.style.display = "block";
-          lightboxVideo.src = source.src;
-          btnDownload.style.display = "block";
-          btnDownload.href = source.src;
-          btnDownload.download = source.src.split("/").pop();
-          btnDownload.setAttribute("aria-label", "Baixar vídeo");
-          lightboxVideo.currentTime = 0;
-          lightboxVideo.play();
-        }
-      });
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.style.display = "none";
-          btnDownload.style.display = "none";
-          lightboxImg.src = "";
-          lightboxVideo.src = "";
-          lightboxVideo.pause();
-        }
-      });
-      document
-        .querySelector(".lightbox-close")
-        .addEventListener("click", () => {
-          btnDownload.style.display = "none";
-          lightbox.style.display = "none";
-          lightboxImg.src = "";
-          lightboxVideo.src = "";
-          lightboxVideo.pause();
-        });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          lightbox.style.display = "none";
-          btnDownload.style.display = "none";
-          lightboxImg.src = "";
-          lightboxVideo.src = "";
-          lightboxVideo.pause();
-        }
-      });
-    </script>
   </body>
 </html>

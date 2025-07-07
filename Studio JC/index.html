@@ -41,7 +41,7 @@
           ><span class="c-branco">C</span>
         </h1>
         <nav aria-label="Menu principal">
-          <ul>
+          <ul id="menu-principal" class="menu-mobile">
             <li><a href="index.html">Home</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="horarios.html">Horários</a></li>
@@ -50,6 +50,11 @@
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
+        <button class="menu-hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div id="admin-info" style="display:none;"></div>
       </div>
     </header>
@@ -230,14 +235,52 @@
         </details>
       </section>
       
-      <section class="info" aria-labelledby="info-titulo">
-        <h3 id="info-titulo">Nossos diferenciais</h3>
-        <ul>
-          <li>Treinos personalizados</li>
-          <li>Profissionais qualificados</li>
-          <li>Ambiente acolhedor</li>
-          <li>Resultados reais</li>
-        </ul>
+      <section class="diferenciais-home">
+        <h2>Diferenciais do Studio JC</h2>
+        <div class="diferenciais-lista">
+          <div class="diferencial-item">
+            <div class="diferencial-texto">
+              <h3>Equipamentos de Última Geração</h3>
+              <p>
+                O Studio JC conta com aparelhos modernos e manutenção constante
+                para garantir segurança e resultados.
+              </p>
+            </div>
+            <div class="diferencial-foto">
+              <img
+                src="fotos/1751122007602-IMG_2113.jpg"
+                alt="Equipamentos modernos do Studio JC"
+              />
+            </div>
+          </div>
+          <div class="diferencial-item">
+            <div class="diferencial-texto">
+              <h3>Ambiente Acolhedor</h3>
+              <p>
+                Espaço climatizado, limpo e pensado para o seu conforto, promovendo
+                bem-estar durante os treinos.
+              </p>
+            </div>
+            <div class="diferencial-foto">
+              <img
+                src="fotos/1751248352210-IMG_5011.jpg"
+                alt="Ambiente acolhedor do Studio JC"
+              />
+            </div>
+          </div>
+          <div class="diferencial-item">
+            <div class="diferencial-texto">
+              <h3>Profissionais Qualificados</h3>
+              <p>
+                Equipe formada por profissionais experientes e especializados,
+                prontos para te orientar com segurança.
+              </p>
+            </div>
+            <div class="diferencial-foto">
+              <img src="fotos/1751122300141-campeonato_2025_(209).jpg" alt="Equipe do Studio JC" />
+            </div>
+          </div>
+        </div>
       </section>
       <!-- <section class="parcerias" aria-labelledby="parcerias-titulo">
         <h3 id="parcerias-titulo">Convênios aceitos</h3>
@@ -381,5 +424,6 @@
     </footer>
     <div id="modal-login" style="display:none;"></div>
     <script src="js/index-enhancements.js"></script>
+    <script src="js/menu-hamburguer.js"></script>
   </body>
 </html>

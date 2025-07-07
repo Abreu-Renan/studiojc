@@ -16,7 +16,7 @@
         </a>
         <h1>Studio JC</h1>
         <nav>
-          <ul>
+          <ul id="menu-principal">
             <li><a href="index.html">Home</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="horarios.html">Horários</a></li>
@@ -25,6 +25,16 @@
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
+        <button
+          class="menu-hamburguer"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div id="admin-info" style="display: none"></div>
       </div>
     </header>
@@ -181,5 +191,6 @@
         };
       }
     </script>
+    <script src="js/index-enhancements.js"></script>
   </body>
 </html>

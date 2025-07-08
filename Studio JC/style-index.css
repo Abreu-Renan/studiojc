@@ -1,0 +1,1307 @@
+/* Estilos específicos da página inicial (index.html) do Studio JC */
+
+/* Header Admin */
+#admin-info {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 32px;
+  z-index: 200;
+  align-items: center;
+  gap: 8px;
+}
+#admin-info > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#admin-info span:first-child {
+  font-size: 2.1rem;
+  color: #fff;
+  background: #e10600;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #e1060033;
+}
+#admin-info span:last-child {
+  font-size: 13px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 2px;
+}
+#btn-logout {
+  margin-top: 4px;
+  background: none;
+  border: none;
+  color: #e10600;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main section {
+  max-width: 700px;
+  margin: 0 auto 32px auto;
+  padding: 24px 0 0 0;
+}
+main h2 {
+  font-size: 2.1rem;
+  margin-bottom: 18px;
+}
+main p {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+/* Rodapé */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 16px 12px 16px;
+  gap: 36px;
+  background: none;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -2px 24px #0008;
+}
+.footer-logo-quote {
+  flex: 1.1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+.footer-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 8px #3a7bbf88);
+}
+.footer-quote {
+  color: #3a7bbf;
+  font-size: 1.08em;
+  font-style: italic;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-shadow: 0 2px 8px #3a7bbf33;
+}
+.footer-contato,
+.footer-social {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.footer-contato h4,
+.footer-social h4 {
+  margin-bottom: 10px;
+  color: #e10600;
+  font-size: 1.13em;
+  letter-spacing: 0.5px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-shadow: 0 2px 8px #e1060033;
+}
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: #fff;
+}
+.footer-list li {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-telefone,
+.footer-email {
+  color: #e10600;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.footer-telefone:hover,
+.footer-email:hover {
+  color: #fff;
+  background: #e10600;
+  border-radius: 6px;
+  padding: 2px 6px;
+  text-decoration: underline;
+}
+.footer-social {
+  align-items: center;
+  text-align: center;
+}
+.footer-social-title {
+  display: block;
+  text-align: center;
+  color: #e10600;
+  font-size: 1.13em;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #e1060033;
+}
+.footer-social-icons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+  justify-content: center;
+}
+.footer-instagram,
+.footer-whatsapp,
+.footer-email-icon {
+  width: 36px;
+  height: 36px;
+  filter: grayscale(0);
+  vertical-align: middle;
+  border-radius: 8px;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 2px 8px #e1060033;
+  transition: box-shadow 0.2s, filter 0.2s, background 0.2s;
+}
+.footer-instagram:hover,
+.footer-whatsapp:hover,
+.footer-email-icon:hover {
+  box-shadow: 0 4px 16px #e1060055;
+  filter: grayscale(0) brightness(1.1);
+  background: #e10600;
+}
+.footer-social-label {
+  color: #fff;
+  font-size: 1em;
+  margin-top: 2px;
+  display: block;
+  text-shadow: 0 2px 8px #000a;
+}
+.footer-copy {
+  text-align: center;
+  color: #bbb;
+  font-size: 1em;
+  margin-top: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #000a;
+}
+
+/* --- Seção de Convênios no Rodapé --- */
+.footer-convenios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  max-width: 220px;
+  margin: 0 18px;
+}
+.footer-convenios h4 {
+  color: #3a7bbf;
+  font-size: 1.08em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.footer-convenios-logos {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.convenio-logo {
+  height: 32px;
+}
+.footer-convenios-text {
+  font-size: 0.97em;
+  color: #444;
+  margin-top: 4px;
+  text-align: center;
+}
+/* --- Fim seção convênios --- */
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    text-align: left;
+    padding: 24px 12px 8px 12px;
+  }
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    text-align: left;
+    padding: 18px 6px 6px 6px;
+  }
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Modal Login */
+#modal-login {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0008;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#modal-login form {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px #0005;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+#modal-login input {
+  padding: 7px 12px;
+  border-radius: 7px;
+  border: 1.2px solid #e1060033;
+  font-size: 15px;
+  width: 180px;
+}
+#modal-login button[type="submit"] {
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: #e10600;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+#login-erro {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+#modal-login button[type="button"] {
+  background: none;
+  border: none;
+  color: #e10600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Carrossel de depoimentos */
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+.carrossel-btn {
+  background: #e10600;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #e1060033;
+}
+.carrossel-btn:focus {
+  outline: 2px solid #3a7bbf;
+  outline-offset: 2px;
+}
+.carrossel-btn:hover {
+  background: #3a7bbf;
+  transform: scale(1.08);
+}
+.carrossel-depoimentos {
+  min-width: 220px;
+  max-width: 340px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.depoimento {
+  display: none;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #3a7bbf22;
+  padding: 18px 22px;
+  margin: 0 8px;
+  font-size: 1.08em;
+  text-align: center;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.depoimento[aria-hidden="false"],
+.depoimento:focus {
+  display: block;
+}
+.depoimento span {
+  display: block;
+  margin-top: 8px;
+  color: #3a7bbf;
+  font-weight: bold;
+}
+
+/* Botão CTA flutuante */
+.cta-flutuante {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #e10600;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 4px 24px #e1060033;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  animation: flutuar 2.5s infinite ease-in-out;
+}
+.cta-flutuante:focus {
+  outline: 2px solid #3a7bbf;
+  outline-offset: 2px;
+}
+.cta-flutuante:hover {
+  background: #3a7bbf;
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px #3a7bbf33;
+}
+@keyframes flutuar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Feedback visual formulário login */
+.feedback-sucesso {
+  color: #1cae1c;
+  font-weight: bold;
+  margin-top: 6px;
+  display: block;
+  animation: feedbackFade 1.2s;
+}
+.feedback-erro {
+  color: #e10600;
+  font-weight: bold;
+  margin-top: 6px;
+  display: block;
+  animation: feedbackFade 1.2s;
+}
+@keyframes feedbackFade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Alternância de tema escuro */
+body.tema-escuro {
+  background: #181818;
+  color: #f2f2f2;
+}
+body.tema-escuro .footer-container,
+body.tema-escuro .footer-copy {
+  background: #111;
+  color: #bbb;
+}
+body.tema-escuro .carrossel-depoimentos,
+body.tema-escuro .depoimento {
+  background: #232323;
+  color: #f2f2f2;
+}
+body.tema-escuro .cta-flutuante {
+  background: #3a7bbf;
+  color: #fff;
+}
+body.tema-escuro .cta-flutuante:hover {
+  background: #e10600;
+}
+body.tema-escuro .carrossel-btn {
+  background: #3a7bbf;
+}
+body.tema-escuro .carrossel-btn:hover {
+  background: #e10600;
+}
+
+/* Animação sutil em botões */
+button,
+.cta-bem-vindo,
+.cta-flutuante {
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+button.ativo,
+.cta-bem-vindo.ativo,
+.cta-flutuante.ativo {
+  transform: scale(0.96);
+  filter: brightness(0.95);
+}
+
+/* Acessibilidade: foco visível */
+:focus {
+  outline: 2px solid #3a7bbf;
+  outline-offset: 2px;
+}
+
+/* Banner de Promoção */
+.banner-promocao {
+  background: linear-gradient(90deg, #e10600 60%, #3a7bbf 100%);
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #e1060033;
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInDown 1s;
+}
+.banner-conteudo h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.banner-conteudo p {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+}
+.cta-banner {
+  background: #fff;
+  color: #e10600;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #e1060033;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.cta-banner:hover {
+  background: #3a7bbf;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Galeria Home */
+.galeria-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 28px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+}
+.galeria-carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 18px 0;
+}
+.galeria-btn {
+  background: #e10600;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #e1060033;
+}
+.galeria-btn:hover {
+  background: #3a7bbf;
+  transform: scale(1.08);
+}
+.galeria-imagens {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.galeria-imagens img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #3a7bbf33;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.galeria-imagens img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px #e1060033;
+}
+.cta-galeria {
+  display: inline-block;
+  margin-top: 10px;
+  background: #3a7bbf;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.cta-galeria:hover {
+  background: #e10600;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Indicadores */
+.indicadores {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #181818;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf22;
+  padding: 24px 0;
+  margin-bottom: 32px;
+  animation: fadeIn 1.2s;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.indicador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1em;
+  color: #fff;
+}
+.indicador-num {
+  font-size: 2.1em;
+  font-weight: bold;
+  color: #e10600;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 8px #e1060033;
+}
+
+/* Agenda Home */
+.agenda-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+}
+.agenda-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto 12px auto;
+  background: #fff1;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.agenda-tabela th,
+.agenda-tabela td {
+  padding: 8px 14px;
+  border-bottom: 1px solid #3a7bbf33;
+}
+.agenda-tabela th {
+  background: #3a7bbf;
+  color: #fff;
+  font-weight: bold;
+}
+.cta-agenda {
+  display: inline-block;
+  margin-top: 10px;
+  background: #e10600;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.cta-agenda:hover {
+  background: #3a7bbf;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Equipe Home */
+.equipe-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+}
+.equipe-lista {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.equipe-membro {
+  background: #fff1;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #3a7bbf22;
+  padding: 16px 12px;
+  text-align: center;
+  width: 160px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.equipe-membro img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #e1060033;
+}
+.equipe-membro:hover {
+  box-shadow: 0 4px 16px #e1060033;
+  transform: scale(1.05);
+}
+.equipe-nome {
+  font-weight: bold;
+  color: #e10600;
+  margin-bottom: 2px;
+}
+.equipe-bio {
+  font-size: 0.98em;
+  color: #fff;
+}
+
+/* Blog/Dicas */
+.blog-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+}
+.blog-lista {
+  list-style: disc inside;
+  color: #fff;
+  margin: 0 auto 12px auto;
+  text-align: left;
+  max-width: 420px;
+}
+.cta-blog {
+  display: inline-block;
+  margin-top: 10px;
+  background: #e10600;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.cta-blog:hover {
+  background: #3a7bbf;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Instagram Feed */
+.instagram-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+}
+.instagram-feed iframe {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #3a7bbf22;
+  width: 100%;
+  max-width: 420px;
+  height: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* FAQ */
+.faq-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  margin-bottom: 32px;
+  text-align: left;
+  animation: fadeInUp 1.2s;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.faq-home details {
+  margin-bottom: 10px;
+  background: #fff1;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.faq-home details[open] {
+  background: #3a7bbf33;
+}
+.faq-home summary {
+  font-weight: bold;
+  color: #e10600;
+  cursor: pointer;
+}
+
+/* Depoimentos em Vídeo */
+.depoimentos-video {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 24px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+}
+.depoimentos-videos-lista {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.depoimentos-videos-lista video {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #e1060033;
+  background: #000;
+  width: 250px;
+  height: 140px;
+}
+
+/* Bem-vindo aprimorado */
+.destaque.bem-vindo {
+  /* Removido background e box-shadow para ficar sem fundo */
+  background: none;
+  color: #fff;
+  padding: 120px 24px 32px 24px; /* padding-top ainda maior para descer mais o texto */
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 36px;
+  box-shadow: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInDown 1s;
+}
+.destaque.bem-vindo .bem-vindo-titulos h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  font-family: "Oswald", "Montserrat", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #e1060033, 0 1px 0 #000, 0 0 8px #e10600;
+}
+.destaque.bem-vindo .bem-vindo-texto {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  color: #fff;
+  text-shadow: 0 2px 8px #3a7bbf33;
+}
+.bem-vindo-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.bem-vindo-lista li {
+  background: #fff1;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1.08em;
+  box-shadow: 0 2px 8px #3a7bbf22;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.bem-vindo-lista li:hover {
+  background: #3a7bbf;
+  transform: scale(1.05);
+}
+.cta-bem-vindo {
+  background: #fff;
+  color: #e10600;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.15em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #e1060033;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  margin-top: 10px;
+  display: inline-block;
+}
+.cta-bem-vindo:hover {
+  background: #3a7bbf;
+  color: #fff;
+  transform: scale(1.05);
+}
+@media (max-width: 700px) {
+  .destaque.bem-vindo {
+    padding: 58px 4px 16px 4px; /* aumenta o padding-top no mobile também */
+    font-size: 1em;
+  }
+  .bem-vindo-lista {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    text-align: left;
+    padding: 24px 12px 8px 12px;
+  }
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .indicadores {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .equipe-lista {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    text-align: left;
+    padding: 18px 6px 6px 6px;
+  }
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo-quote {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Responsividade geral para telas menores */
+@media (max-width: 600px) {
+  .carrossel-depoimentos {
+    max-width: 95vw;
+  }
+  .cta-flutuante {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 18px;
+    font-size: 1em;
+  }
+  .banner-promocao,
+  .galeria-home,
+  .indicadores,
+  .agenda-home,
+  .equipe-home,
+  .blog-home,
+  .instagram-home,
+  .faq-home,
+  .depoimentos-video {
+    padding: 14px 4px;
+    font-size: 0.98em;
+  }
+  .galeria-imagens img {
+    width: 80px;
+    height: 54px;
+  }
+  .equipe-membro {
+    width: 100%;
+  }
+  .depoimentos-videos-lista video {
+    width: 98vw;
+    max-width: 250px;
+    height: 120px;
+  }
+}
+
+/* Background de foto estilo referência: ocupa topo, escurecido, texto por cima centralizado */
+.main-bg-foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 48vh;
+  min-height: 320px;
+  background: url("../assets/campeonato 2025 (769).jpg") center center/cover
+    no-repeat;
+  z-index: 1;
+  opacity: 1;
+  filter: brightness(0.45);
+  pointer-events: none;
+  transition: opacity 0.5s, filter 0.5s;
+}
+@media (max-width: 900px) {
+  .main-bg-foto {
+    height: 32vh;
+    min-height: 180px;
+  }
+}
+
+.bem-vindo-flex,
+.destaque.bem-vindo {
+  position: relative;
+  z-index: 2;
+}
+
+.destaque.bem-vindo {
+  /* Removido background e box-shadow para ficar sem fundo */
+  background: none;
+  color: #fff;
+  padding: 120px 24px 32px 24px; /* padding-top ainda maior para descer mais o texto */
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 36px;
+  box-shadow: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInDown 1s;
+}
+.destaque.bem-vindo .bem-vindo-titulos h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  font-family: "Oswald", "Montserrat", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #e1060033, 0 5px 0 #000, 0 0 8px #e10600;
+}
+.destaque.bem-vindo .bem-vindo-texto {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  color: #fff;
+  text-shadow: 0 2px 8px #3a7bbf33;
+}
+.bem-vindo-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.bem-vindo-lista li {
+  background: #fff1;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1.08em;
+  box-shadow: 0 2px 8px #3a7bbf22;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.bem-vindo-lista li:hover {
+  background: #3a7bbf;
+  transform: scale(1.05);
+}
+.cta-bem-vindo {
+  background: #fff;
+  color: #e10600;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.15em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #e1060033;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  margin-top: 10px;
+  display: inline-block;
+}
+.cta-bem-vindo:hover {
+  background: #3a7bbf;
+  color: #fff;
+  transform: scale(1.05);
+}
+@media (max-width: 700px) {
+  .destaque.bem-vindo {
+    padding: 58px 4px 16px 4px; /* aumenta o padding-top no mobile também */
+    font-size: 1em;
+  }
+  .bem-vindo-lista {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Reforço para diferenciais-home */
+.diferenciais-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 32px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.diferenciais-home h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+.diferenciais-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.diferencial-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #e1060033;
+  padding: 18px 18px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.diferencial-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.diferencial-texto {
+  flex: 2;
+  text-align: left;
+  color: #fff;
+}
+.diferencial-texto h3 {
+  color: #e10600;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.diferencial-foto {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.diferencial-foto img {
+  max-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #e1060033;
+}
+@media (max-width: 900px) {
+  .diferenciais-lista {
+    gap: 18px;
+  }
+  .diferencial-item {
+    flex-direction: column !important;
+    gap: 12px;
+    padding: 12px 6px;
+    align-items: flex-start;
+  }
+  .diferencial-foto img {
+    max-width: 98vw;
+  }
+  .diferencial-texto {
+    text-align: left;
+  }
+}
+
+/* Torna seletores dos depoimentos mais específicos */
+section.depoimentos-modern .depoimentos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: stretch;
+}
+section.depoimentos-modern .depoimento-card {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #e1060033, 0 0 0 #fff0;
+  border-left: 6px solid #e10600;
+  margin: 0 12px;
+  padding: 32px 28px 24px 28px;
+  max-width: 600px;
+  min-width: 260px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  opacity: 1;
+  transition: box-shadow 0.3s, transform 0.3s, opacity 0.3s;
+  position: relative;
+  animation: depoimentoFadeIn 0.5s;
+}
+section.depoimentos-modern .depoimento-card.right {
+  flex-direction: row-reverse;
+  margin-left: auto;
+  border-left: none;
+  border-right: 6px solid #e10600;
+}
+section.depoimentos-modern .depoimento-card.left {
+  margin-right: auto;
+}
+section.depoimentos-modern .depoimento-avatar {
+  background: #e10600;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #e1060033;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+section.depoimentos-modern .depoimento-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+section.depoimentos-modern .depoimento-aspas {
+  font-size: 2.5rem;
+  color: #e10600;
+  font-family: serif;
+  line-height: 1;
+  margin-bottom: -8px;
+  margin-left: -4px;
+}
+section.depoimentos-modern .depoimento-card p {
+  color: #fff;
+  font-size: 1.13rem;
+  font-style: italic;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 8px #e1060033;
+}
+section.depoimentos-modern .depoimento-nome {
+  color: #e10600;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  align-self: flex-end;
+}
+@media (max-width: 700px) {
+  section.depoimentos-modern {
+    padding: 24px 4px 18px 4px;
+  }
+  section.depoimentos-modern .depoimento-card {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 22px 10px 18px 10px;
+  }
+}
+
+/* Avatar específico para Meg Chaluppe */
+.depoimento-avatar img[alt="Avatar Meg Chaluppe"] {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e10600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Ajuste geral para manter alinhamento e responsividade dos avatares */
+.depoimento-avatar .avatar-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #e10600;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .depoimento-avatar img[alt="Avatar Meg Chaluppe"] {
+    width: 56px;
+    height: 56px;
+  }
+  .depoimento-avatar .avatar-img {
+    width: 48px;
+    height: 48px;
+  }
+}

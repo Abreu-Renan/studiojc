@@ -1108,86 +1108,200 @@ button.ativo,
   }
 }
 
-/*main#main-content {
-  position: relative;
-  z-index: 3;
-  background: #181818ee;
-  border-radius: 0 0 18px 18px;
-  margin-top: -60px;
-  box-shadow: 0 4px 32px #0005;
-}*/
-
-.studio-destaque {
+/* Reforço para diferenciais-home */
+.diferenciais-home {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #3a7bbf33;
+  padding: 32px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  animation: fadeInUp 1.2s;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.diferenciais-home h2 {
   color: #fff;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
 }
-.j-vermelho {
-  color: #e10600;
-}
-.c-branco {
-  color: #fff;
-}
-
-/* Diferenciais */
 .diferenciais-lista {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 900px;
-  margin: 0 auto 36px auto;
-  padding: 0;
 }
 .diferencial-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #e1060033;
+  padding: 18px 18px;
   gap: 32px;
-  background: #232323;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px #3a7bbf33;
-  padding: 24px 18px;
-  animation: fadeInUp 1.2s;
   flex-wrap: wrap;
 }
-.diferencial-item .diferencial-texto {
-  flex: 1.2;
-  min-width: 180px;
-  color: #fff;
-  font-size: 1.18em;
-  font-weight: 500;
-  text-align: left;
+.diferencial-item:nth-child(even) {
+  flex-direction: row-reverse;
 }
-.diferencial-item .diferencial-foto {
+.diferencial-texto {
+  flex: 2;
+  text-align: left;
+  color: #fff;
+}
+.diferencial-texto h3 {
+  color: #e10600;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.diferencial-foto {
   flex: 1;
-  min-width: 120px;
-  max-width: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.diferencial-item .diferencial-foto img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px #e1060033;
-  object-fit: cover;
+.diferencial-foto img {
+  max-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #e1060033;
 }
-.diferenciais-lista .diferencial-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .diferenciais-lista {
+    gap: 18px;
+  }
   .diferencial-item {
-    flex-direction: column;
-    gap: 14px;
-    text-align: center;
-    align-items: stretch;
-    padding: 14px 6px;
+    flex-direction: column !important;
+    gap: 12px;
+    padding: 12px 6px;
+    align-items: flex-start;
   }
-  .diferencial-item .diferencial-texto {
-    text-align: center;
-    font-size: 1em;
+  .diferencial-foto img {
+    max-width: 98vw;
   }
-  .diferencial-item .diferencial-foto {
-    max-width: 100%;
-    justify-content: center;
+  .diferencial-texto {
+    text-align: left;
+  }
+}
+
+/* Torna seletores dos depoimentos mais específicos */
+section.depoimentos-modern .depoimentos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: stretch;
+}
+section.depoimentos-modern .depoimento-card {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #e1060033, 0 0 0 #fff0;
+  border-left: 6px solid #e10600;
+  margin: 0 12px;
+  padding: 32px 28px 24px 28px;
+  max-width: 600px;
+  min-width: 260px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  opacity: 1;
+  transition: box-shadow 0.3s, transform 0.3s, opacity 0.3s;
+  position: relative;
+  animation: depoimentoFadeIn 0.5s;
+}
+section.depoimentos-modern .depoimento-card.right {
+  flex-direction: row-reverse;
+  margin-left: auto;
+  border-left: none;
+  border-right: 6px solid #e10600;
+}
+section.depoimentos-modern .depoimento-card.left {
+  margin-right: auto;
+}
+section.depoimentos-modern .depoimento-avatar {
+  background: #e10600;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #e1060033;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+section.depoimentos-modern .depoimento-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+section.depoimentos-modern .depoimento-aspas {
+  font-size: 2.5rem;
+  color: #e10600;
+  font-family: serif;
+  line-height: 1;
+  margin-bottom: -8px;
+  margin-left: -4px;
+}
+section.depoimentos-modern .depoimento-card p {
+  color: #fff;
+  font-size: 1.13rem;
+  font-style: italic;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 8px #e1060033;
+}
+section.depoimentos-modern .depoimento-nome {
+  color: #e10600;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  align-self: flex-end;
+}
+@media (max-width: 700px) {
+  section.depoimentos-modern {
+    padding: 24px 4px 18px 4px;
+  }
+  section.depoimentos-modern .depoimento-card {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 22px 10px 18px 10px;
+  }
+}
+
+/* Avatar específico para Meg Chaluppe */
+.depoimento-avatar img[alt="Avatar Meg Chaluppe"] {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e10600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Ajuste geral para manter alinhamento e responsividade dos avatares */
+.depoimento-avatar .avatar-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #e10600;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .depoimento-avatar img[alt="Avatar Meg Chaluppe"] {
+    width: 56px;
+    height: 56px;
+  }
+  .depoimento-avatar .avatar-img {
+    width: 48px;
+    height: 48px;
   }
 }

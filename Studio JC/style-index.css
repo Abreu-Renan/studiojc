@@ -696,31 +696,51 @@ button.ativo,
   background: #fff1;
   border-radius: 10px;
   box-shadow: 0 2px 8px #3a7bbf22;
-  padding: 16px 12px;
+  padding: 24px 18px;
   text-align: center;
-  width: 160px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .equipe-membro img {
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 8px;
+  border-radius: 12px;
+  margin-bottom: 14px;
   box-shadow: 0 2px 8px #e1060033;
-}
-.equipe-membro:hover {
-  box-shadow: 0 4px 16px #e1060033;
-  transform: scale(1.05);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .equipe-nome {
   font-weight: bold;
   color: #e10600;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
+  font-size: 1.25em;
 }
 .equipe-bio {
-  font-size: 0.98em;
-  color: #fff;
+  font-size: 1.08em;
+  color: #222;
+}
+@media (max-width: 700px) {
+  .equipe-lista {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .equipe-membro {
+    width: 98vw;
+    max-width: 320px;
+    padding: 18px 6px;
+  }
+  .equipe-membro img {
+    width: 90vw;
+    max-width: 180px;
+    height: auto;
+  }
 }
 
 /* Blog/Dicas */
@@ -1005,7 +1025,7 @@ button.ativo,
   width: 100vw;
   height: 48vh;
   min-height: 320px;
-  background: url("../assets/campeonato 2025 (769).jpg") center center/cover
+  background: url("assets/campeonato 2025 (769).jpg") center center/cover
     no-repeat;
   z-index: 1;
   opacity: 1;

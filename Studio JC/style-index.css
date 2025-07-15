@@ -4,63 +4,82 @@
 #admin-info {
   display: none;
   position: absolute;
-  top: 18px;
-  right: 32px;
-  z-index: 200;
-  align-items: center;
-  gap: 8px;
+
+.depoimentos-modern {
+  margin: 0 auto 3rem auto;
+  max-width: 1000px;
+  padding: 0 1rem;
 }
-#admin-info > div {
+.depoimentos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem 2rem;
+}
+.depoimento-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  max-width: 320px;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  transition: box-shadow 0.2s;
+  text-align: center;
 }
-#admin-info span:first-child {
-  font-size: 2.1rem;
-  color: #fff;
-  background: #e10600;
+.depoimento-card.left,
+.depoimento-card.right {
+  margin: 0;
+}
+.depoimento-avatar {
+  margin-bottom: 1.2rem;
+}
+.avatar-img {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px #e1060033;
+  object-fit: cover;
+  border: 3px solid #e10600;
+  box-shadow: 0 2px 8px rgba(225,6,0,0.10);
 }
-#admin-info span:last-child {
-  font-size: 13px;
-  color: #fff;
-  font-weight: bold;
-  margin-top: 2px;
+.depoimento-conteudo {
+  width: 100%;
 }
-#btn-logout {
-  margin-top: 4px;
-  background: none;
-  border: none;
+.depoimento-aspas {
+  font-size: 2.5rem;
   color: #e10600;
-  font-size: 13px;
-  cursor: pointer;
-  text-decoration: underline;
+  font-family: serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.depoimento-nome {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #222;
+  font-size: 1.13rem;
+  letter-spacing: 0.01em;
 }
 
-/* Conteúdo principal */
-main section {
-  max-width: 700px;
-  margin: 0 auto 32px auto;
-  padding: 24px 0 0 0;
+@media (max-width: 700px) {
+  .depoimentos-lista {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .depoimento-card {
+    max-width: 100%;
+    padding: 1.5rem 1rem 1.2rem 1rem;
+  }
+  .avatar-img {
+    width: 64px;
+    height: 64px;
+  }
 }
-main h2 {
-  font-size: 2.1rem;
-  margin-bottom: 18px;
-}
-main p {
-  font-size: 1.1rem;
-  margin-bottom: 18px;
-}
-
-/* Rodapé */
-.footer-container {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
@@ -677,6 +696,91 @@ button.ativo,
 
 /* Equipe Home */
 .equipe-home {
+  padding: 40px 0 30px 0;
+  background: #fafbfc;
+  text-align: center;
+}
+.equipe-home h3 {
+  font-size: 2.1rem;
+  margin-bottom: 32px;
+  color: #e10600;
+  letter-spacing: 1px;
+}
+.equipe-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.equipe-membro {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 28px 24px 20px 24px;
+  max-width: 240px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.equipe-membro:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px #0002;
+}
+.equipe-foto {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  border: 3px solid #e10600;
+  background: #eee;
+  box-shadow: 0 2px 12px #0001;
+}
+.equipe-nome {
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+.equipe-bio {
+  font-size: 0.98rem;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.equipe-social {
+  margin-top: 8px;
+}
+.equipe-social-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 4px;
+  transition: filter 0.2s;
+  filter: grayscale(1) brightness(0.7);
+}
+.equipe-social-icon:hover {
+  filter: none;
+}
+@media (max-width: 700px) {
+  .equipe-lista {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .equipe-membro {
+    max-width: 90vw;
+    min-width: 0;
+    padding: 20px 10px 16px 10px;
+  }
+  .equipe-foto {
+    width: 90px;
+    height: 90px;
+  }
+}
+/* .equipe-home {
   background: #232323;
   border-radius: 14px;
   box-shadow: 0 2px 16px #3a7bbf33;
@@ -723,7 +827,7 @@ button.ativo,
 }
 .equipe-bio {
   font-size: 1.08em;
-  color: #222;
+  color: #ffffff;
 }
 @media (max-width: 700px) {
   .equipe-lista {
@@ -741,7 +845,7 @@ button.ativo,
     max-width: 180px;
     height: auto;
   }
-}
+} */
 
 /* Blog/Dicas */
 .blog-home {

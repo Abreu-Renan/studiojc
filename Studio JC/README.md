@@ -35,8 +35,8 @@ Este é o repositório do site oficial do Studio JC, um estúdio de treinamento 
 
 ## Créditos
 
-Desenvolvido por Studio JC e colaboradores.
+Desenvolvido por Renan Abreu e colaboradores.
 
 ---
 
-Dúvidas ou sugestões? Entre em contato pelo e-mail studiojcfuncional@gmail.com ou pelo Instagram @studiojc_funcional.
+Dúvidas ou sugestões? Entre em contato pelo e-mail progamearcade.sp@gmail.com ou pelo Instagram.

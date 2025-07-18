@@ -1,3 +1,350 @@
+/* Espaçamento extra entre seções principais */
+main > section {
+  margin-bottom: 32px;
+}
+
+/* Centralizar títulos das seções */
+main h2,
+main h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Cards com sombra e borda arredondada */
+.equipe-membro,
+.depoimento-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: #181818;
+  transition: box-shadow 0.3s;
+}
+.equipe-membro:hover,
+.depoimento-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Imagens arredondadas e com sombra leve */
+.equipe-foto,
+.depoimento-avatar img,
+.galeria-imagens img,
+.diferencial-foto img {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão flutuante destacado */
+.cta-flutuante {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: linear-gradient(90deg, #e10600 60%, #ff6a00 100%);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  padding: 14px 28px;
+  font-size: 1.1em;
+  z-index: 99;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-flutuante:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 24px rgba(225, 6, 0, 0.18);
+}
+
+/* Transições suaves para links e botões */
+a,
+button {
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+/* Menu hamburguer animação suave */
+.menu-hamburguer {
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.menu-hamburguer:active {
+  box-shadow: 0 2px 8px rgba(225, 6, 0, 0.18);
+}
+@media (max-width: 500px) {
+  main {
+    padding: 0 0 20px 0;
+  }
+  .bem-vindo-flex {
+    flex-direction: column;
+    padding: 0 2vw;
+  }
+  .bem-vindo-titulos h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .bem-vindo-lista {
+    font-size: 0.98em;
+    padding-left: 0;
+  }
+  .galeria-home {
+    padding: 10px 0;
+  }
+  .galeria-carrossel {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 2vw;
+  }
+  .galeria-imagens img {
+    max-width: 90vw;
+    height: auto;
+    margin: 0 auto;
+  }
+  .indicadores {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0;
+    align-items: center;
+  }
+  .indicador {
+    font-size: 1em;
+    min-width: 0;
+    width: 90vw;
+    justify-content: center;
+  }
+  .agenda-home {
+    padding: 10px 0;
+  }
+  .agenda-tabela {
+    font-size: 0.95em;
+    width: 98vw;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+  .equipe-home {
+    padding: 10px 0;
+  }
+  .equipe-lista {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100vw;
+    margin-left: -10vw;
+    padding: 0;
+  }
+  .equipe-membro {
+    width: 90vw;
+    min-width: 0;
+    padding: 10px 4vw;
+    border-radius: 8px;
+    margin: 0 auto;
+    box-shadow: none;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .equipe-foto {
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 4px;
+  }
+  .equipe-nome {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  .equipe-bio {
+    font-size: 0.95em;
+    text-align: center;
+  }
+  .equipe-social {
+    margin-top: 2px;
+  }
+  .equipe-social-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .blog-home {
+    padding: 10px 0;
+  }
+  .blog-lista {
+    font-size: 0.98em;
+    padding-left: 0;
+  }
+  .faq-home {
+    padding: 10px 0;
+  }
+  .faq-home details {
+    font-size: 0.98em;
+    margin-bottom: 6px;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .footer-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 4px;
+  }
+  .footer-quote {
+    font-size: 0.95em;
+    text-align: center;
+  }
+  .footer-contato,
+  .footer-social,
+  .footer-convenios {
+    width: 90vw;
+    text-align: center;
+    margin: 0 auto 6px auto;
+  }
+  .footer-list {
+    font-size: 0.95em;
+    padding-left: 0;
+  }
+  .footer-social-icons a {
+    margin: 0 6px;
+  }
+  .footer-convenios-logos img {
+    width: 60px;
+    height: auto;
+    margin: 0 4px;
+  }
+  .footer-copy {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 500px) {
+  section.depoimentos-modern {
+    padding: 6px 0 6px 0;
+  }
+  section.depoimentos-modern .depoimentos-lista {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    width: 100vw;
+    margin-left: -10vw;
+    padding: 0 12px;
+  }
+  section.depoimentos-modern .depoimento-card {
+    max-width: 100vw;
+    min-width: 0;
+    width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 14px 14px 12px 14px;
+    margin: 0;
+    gap: 6px;
+    background: #181818;
+    border-left: 0;
+    border-right: 0;
+  }
+  section.depoimentos-modern .depoimento-avatar {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 6px auto;
+  }
+  section.depoimentos-modern .depoimento-avatar img,
+  .depoimento-avatar .avatar-img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  section.depoimentos-modern .depoimento-conteudo {
+    font-size: 0.98em;
+    padding: 0;
+  }
+  section.depoimentos-modern .depoimento-aspas {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  section.depoimentos-modern .depoimento-card p {
+    font-size: 0.98em;
+    margin: 0 0 4px 0;
+  }
+  section.depoimentos-modern .depoimento-nome {
+    font-size: 0.98em;
+    margin-top: 2px;
+    align-self: center;
+  }
+}
+@media (max-width: 700px) {
+  .diferenciais-home {
+    padding: 16px 4px;
+    max-width: 100vw;
+  }
+  .diferenciais-lista {
+    gap: 12px;
+  }
+  .diferencial-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 4px;
+  }
+  .diferencial-foto {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  .diferencial-foto img {
+    max-width: 96vw;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .diferencial-texto {
+    text-align: left;
+    font-size: 1em;
+  }
+
+  section.depoimentos-modern {
+    padding: 12px 2px 10px 2px;
+  }
+  section.depoimentos-modern .depoimentos-lista {
+    gap: 18px;
+  }
+  section.depoimentos-modern .depoimento-card {
+    flex-direction: column;
+    align-items: center;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 14px 6px 12px 6px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  section.depoimentos-modern .depoimento-avatar {
+    margin: 0 auto 8px auto;
+    width: 48px;
+    height: 48px;
+  }
+  section.depoimentos-modern .depoimento-avatar img,
+  .depoimento-avatar .avatar-img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  section.depoimentos-modern .depoimento-conteudo {
+    font-size: 1em;
+    padding: 0;
+  }
+  section.depoimentos-modern .depoimento-aspas {
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  section.depoimentos-modern .depoimento-card p {
+    font-size: 1em;
+  }
+  section.depoimentos-modern .depoimento-nome {
+    font-size: 1em;
+    margin-top: 4px;
+    align-self: center;
+  }
+}
 /* Ajuste visual e alinhamento do footer na home */
 footer {
   display: flex;

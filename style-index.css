@@ -1,3 +1,92 @@
+.depoimento-card.depoimento-horizontal {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+}
+.depoimento-card.depoimento-horizontal .depoimento-avatar {
+  margin-bottom: 0;
+  margin-right: 0.8rem;
+}
+.depoimento-card.depoimento-horizontal .depoimento-conteudo-horizontal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.depoimento-card.depoimento-horizontal .depoimento-frase.destaque {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 700px) {
+  .depoimento-card.depoimento-horizontal {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .depoimento-card.depoimento-horizontal .depoimento-frase.destaque {
+    text-align: center;
+  }
+  .depoimento-card.depoimento-horizontal .depoimento-conteudo-horizontal {
+    align-items: center;
+  }
+}
+/* Depoimentos horizontal (avatar e frase lado a lado) */
+.depoimento-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.depoimento-conteudo-horizontal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.depoimento-horizontal .depoimento-avatar {
+  flex-shrink: 0;
+}
+.depoimento-horizontal .depoimento-frase.destaque {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .depoimento-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .depoimento-horizontal .depoimento-frase.destaque {
+    text-align: center;
+  }
+}
+/* Frase de destaque nos depoimentos (Meg e Juliana) */
+.depoimento-frase.destaque {
+  text-align: center;
+  font-size: 1.18em;
+  color: #fff;
+  font-style: italic;
+  margin: 8px 0 6px 0;
+  line-height: 1.5;
+  position: relative;
+  padding: 0 10px;
+}
+.depoimento-frase.destaque::before,
+.depoimento-frase.destaque::after {
+  color: #e10600;
+  font-size: 1.5em;
+  font-family: serif;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.depoimento-frase.destaque::before {
+  content: "“";
+  margin-right: 2px;
+}
+.depoimento-frase.destaque::after {
+  content: "”";
+  margin-left: 2px;
+}
 /* Espaçamento extra entre seções principais */
 main > section {
   margin-bottom: 32px;
@@ -246,7 +335,7 @@ button {
   section.depoimentos-modern .depoimento-avatar {
     width: 40px;
     height: 40px;
-    margin: 0 auto 6px auto;
+    margin: 0 auto 2px auto;
   }
   section.depoimentos-modern .depoimento-avatar img,
   .depoimento-avatar .avatar-img {
@@ -256,6 +345,7 @@ button {
   section.depoimentos-modern .depoimento-conteudo {
     font-size: 0.98em;
     padding: 0;
+    gap: 2px;
   }
   section.depoimentos-modern .depoimento-aspas {
     font-size: 1.5rem;
